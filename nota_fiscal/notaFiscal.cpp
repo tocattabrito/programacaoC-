@@ -1,31 +1,9 @@
 #include <iostream>
-#include <iomanip> // Para usar a formatação de saída
-#include <cstdlib>
+
 
 using namespace std;
 
-// Estrutura para representar um item da nota fiscal
-struct Item
-{
-    int cod;
-    string descricao;
-    int qtde;
-    double vlUnit;
-};
-
-// Variáveis globais
-double vlTotal = 0.0; // Inicializa o valor total
-
-// Protótipo da função
-double adicionarItem(Item &item);
-
 // Funções
-void entradaDados()
-{
-    cout << "+---------------------------------------------+" << endl;
-    cout << "+INSERIR DADOS                                +" << endl;
-    cout << "+---------------------------------------------+" << endl;
-}
 void informacao()
 {
     cout << "" << endl;
@@ -41,109 +19,36 @@ void informacao()
     cout << "-----------------------------------------------" << endl;
     cout << "" << endl;
 }
-
-void lista(int cod, const string& descricao, int qtde, double vlUnit, double vlTotalItem)
-{
-    // Exibe a lista com os rótulos
-    cout << "CODIGO       DESCRICAO QTDE UN VL.UNIT VL.TOTAL" << endl;
-
-    // Exibe o item abaixo dos rótulos
-    cout << setw(5) << cod << "  " << setw(10) << descricao << setw(4) << qtde << " UN R$ " 
-    << setw(6) << vlUnit << " R$ " << setw(6) << vlTotalItem << endl;
-}
-
-
-// Implementação da função
-double adicionarItem(Item &item)
-{
-    double vlTotalItem = item.qtde * item.vlUnit;
-    vlTotal += vlTotalItem; // Adiciona ao valor total global
-    return vlTotal;     // Retorna o valor total do item
-
-}
-
-void exibirResumo()
-{
-    cout << "-----------------------------------------------" << endl;
-    cout << "VALOR TOTAL: R$ " << fixed << setprecision(2) << vlTotal << endl;
-    cout << "-----------------------------------------------" << endl;
-}
-/*
-    Atividades:
-    Criar módulos para serem acoplados tais
-     - Criação uma função permitindo a entrada de dados no programa,
-     onde o usuário informa o código, descrição, quantidade e valor unit
-     - Resumo dos intens e seu  o valor toral a pagar
-
-
-*/ 
-int main()
-{
-
-    entradaDados();
-
     
+void cadastroProduto()
+{
+    cout << "+---------------------------------------------+" << endl;
+    cout << "+ CADASTRO DE PRODUTOS                        +" << endl;
+    cout << "+---------------------------------------------+" << endl;
 
-    Item item; // Cria uma instância da estrutura Item para representar um produto
 
-    cout << "Digite o código do produto: ";
-    cin >> item.cod;
 
-    cout << "Digite a descrição do produto: ";
-    cin.ignore(); // Limpa o buffer de entrada para evitar problemas com getline
-    getline(cin, item.descricao);
+}
 
-    cout << "Digite a quantidade: ";
-    cin >> item.qtde;
+    int codigo;
+    string descricao;
+    double valorUnitario;
+    int quantidade;
 
-    cout << "Digite o valor unitário: ";
-    cin >> item.vlUnit;
-    system("clear");
+int main(int argc, char const *argv[])
+{
+    cadastroProduto();
+    // informacao();
 
-    // Adiciona o item à lista e obtém o valor total do item
-    double vlTotalItem = adicionarItem(item);
-
-    informacao();
-    lista(struct Item);
-    exibirResumo();
-
-    // lista(item.cod, item.descricao, item.qtde, item.vlUnit, vlTotalItem);
-    // for (int i = 0; i < 3; ++i)
-    // {
-    //     Item item; // Cria uma instância da estrutura Item para representar um produto
-
-    //     cout << "Digite o código do produto: ";
-    //     cin >> item.cod;
-        
-
-    //     cout << "Digite a descrição do produto: ";
-    //     cin.ignore(); // Limpa o buffer de entrada para evitar problemas com getline
-    //     getline(cin, item.descricao);
-        
-
-    //     cout << "Digite a quantidade: ";
-    //     cin >> item.qtde;
-  
-
-    //     cout << "Digite o valor unitário: ";
-    //     cin >> item.vlUnit;
-    //     system("clear");
-
-    //           // Adiciona o item à lista e obtém o valor total do item
-    //     double vlTotalItem = adicionarItem(item);
-
-    //     lista(item.cod, item.descricao, item.qtde, item.vlUnit, vlTotalItem);
-
-    //     // Aguarda uma tecla antes de prosseguir para o próximo item
-    //     // cout << "\nPressione Enter para continuar...";
-    //     // cin.ignore();
-    //     // cin.get();
-    // }
-
-    // Exibe o resumo final
-   
-    // exibirResumo();
-  
-
+    // Cadastro de produtos
+    cout << "Informe o código do produto: " << endl;
+    cin >> codigo;
+    cout << "Digite a descrição do produto: " << endl;
+    cin >> descricao;
+    cout << "Informe o valor unitário: " << endl;
+    cin >> valorUnitario;
+    cout << "Digite a quantidade:" << endl;
+    cin >> quantidade;
     return 0;
 }
+    
