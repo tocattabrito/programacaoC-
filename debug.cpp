@@ -2,8 +2,9 @@
 
 using namespace std;
 
-int main(int argc, const char** argv) {
-    
+int main(int argc, const char **argv)
+{
+
     int ano, idade;
 
     cout << "Digite o ano de nascimento: " << endl;
