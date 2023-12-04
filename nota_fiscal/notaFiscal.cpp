@@ -1,6 +1,11 @@
 #include <iostream>
+#include <cstdlib> // biblioteca responsável por limpar a tela
 
 using namespace std;
+
+// variáveis
+int qtde, cod;
+double vlTotal;
 
 // funções
 
@@ -21,26 +26,32 @@ void cabecalho ()
 void lista()
 {
     cout << "CODIGO       DESCRICAO QTDE UN VL.UNIT VL.TOTAL" << endl;
+    cout << cod << endl;
 }
 
-void itensLista()
+int itensLista(int qtde, double vlUnit)
 {
+    double vlTotal;
     
+    vlTotal = qtde * vlUnit;
+
+    return vlTotal;
 }
 
 int main(int argc, const char** argv) {
 
-    // variáveis
-    int qtde, cod;
-    double total;
+    
 
     
 
-    cabecalho();
-    lista();
+    // cabecalho();
+    // lista();
 
-    cout << "Digite o código do produto: " << endl;
+    cout << "Digite o codigo: " << endl;
     cin >> cod;
+    system("clear");    // limpar a tela
+
+    cout << "Codigo \n"<<  cod << endl;
 
     return 0;
 }
