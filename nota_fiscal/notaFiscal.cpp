@@ -18,8 +18,29 @@ void cabecalho ()
     cout << "" << endl;
 }
 
+void lista()
+{
+    cout << "CODIGO       DESCRICAO QTDE UN VL.UNIT VL.TOTAL" << endl;
+}
+
+void itensLista()
+{
+    
+}
+
 int main(int argc, const char** argv) {
 
+    // variáveis
+    int qtde, cod;
+    double total;
+
+    
+
     cabecalho();
+    lista();
+
+    cout << "Digite o código do produto: " << endl;
+    cin >> cod;
+
     return 0;
 }
