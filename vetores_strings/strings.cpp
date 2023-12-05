@@ -8,12 +8,17 @@ int main(int argc, char const *argv[])
     // cout << nome << endl;
     int i = 0;
 
-    while (nome[i])
+    // while (nome[i])
+    // {
+    //     cout << nome[i];
+    //     i++;
+    // }
+    // cout << "\n";
+
+    do
     {
         cout << nome[i];
-        i++;
-    }
-    cout << "\n";
+    } while (nome[i]);
 
     return 0;
 }
