@@ -36,6 +36,12 @@ int main(int argc, char const *argv[])
             }
 
         */
+        /*
+        int vetor[5] = {1, 2, 3, 4, 5};
+
+        cout << sizeof(vetor) << endl
+        
+        */
     }
     return 0;
 }
