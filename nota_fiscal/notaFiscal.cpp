@@ -52,7 +52,7 @@ double adicionarItem(Item &item)
 {
     double vlTotalItem = item.qtde * item.vlUnit;
     vlTotal += vlTotalItem; // Adiciona ao valor total global
-    return vlTotals;     // Retorna o valor total do item
+    return vlTotal;     // Retorna o valor total do item
 }
 
 void exibirResumo()
@@ -66,7 +66,7 @@ int main()
 {
     cabecalho();
 
-    // Simulação de adição de itens (você pode substituir por lógica real)
+    // Simulação de adição de itens 
     for (int i = 0; i < 3; ++i)
     {
         Item item; // Cria uma instância da estrutura Item para representar um produto
