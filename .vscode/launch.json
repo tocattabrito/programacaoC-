@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/brito/Área de Trabalho/programacaoC-/vetores",
-      "program": "/home/brito/Área de Trabalho/programacaoC-/vetores/build/Debug/outDebug",
+      "cwd": "/home/brito/Área de Trabalho/programacaoC-",
+      "program": "/home/brito/Área de Trabalho/programacaoC-/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
