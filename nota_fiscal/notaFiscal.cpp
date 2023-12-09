@@ -47,6 +47,9 @@ void lista(int cod, const string& descricao, int qtde, double vlUnit, double vlT
     << setw(6) << vlUnit << " R$ " << setw(6) << vlTotalItem << endl;
 }
 
+void inserirDados(){ // programa em analise
+    cout << "---Inserir de Dados-------------------" << endl;
+}
 // Implementação da função
 double adicionarItem(Item &item)
 {
@@ -64,25 +67,25 @@ void exibirResumo()
 
 int main()
 {
-    cabecalho();
-
-    // Simulação de adição de itens 
+    // cabecalho();
+    inserirDados();
+    // Simulação de adição de itens
     for (int i = 0; i < 3; ++i)
     {
         Item item; // Cria uma instância da estrutura Item para representar um produto
 
         cout << "Digite o código do produto: ";
         cin >> item.cod;
-        system("clear");
+        
 
         cout << "Digite a descrição do produto: ";
         cin.ignore(); // Limpa o buffer de entrada para evitar problemas com getline
         getline(cin, item.descricao);
-        system("clear");
+        
 
         cout << "Digite a quantidade: ";
         cin >> item.qtde;
-        system("clear");
+  
 
         cout << "Digite o valor unitário: ";
         cin >> item.vlUnit;
@@ -94,9 +97,9 @@ int main()
         lista(item.cod, item.descricao, item.qtde, item.vlUnit, vlTotalItem);
 
         // Aguarda uma tecla antes de prosseguir para o próximo item
-        cout << "\nPressione Enter para continuar...";
-        cin.ignore();
-        cin.get();
+        // cout << "\nPressione Enter para continuar...";
+        // cin.ignore();
+        // cin.get();
     }
 
     // Exibe o resumo final
