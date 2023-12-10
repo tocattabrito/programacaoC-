@@ -48,7 +48,9 @@ void lista(int cod, const string& descricao, int qtde, double vlUnit, double vlT
 }
 
 void inserirDados(){ // programa em analise
-    cout << "---Inserir de Dados-------------------" << endl;
+    cout << "+------------------------------------+" << endl;
+    cout << "+INSERIR DADOS                       +" << endl;
+    cout << "+------------------------------------+" << endl;
 }
 // Implementação da função
 double adicionarItem(Item &item)
@@ -67,44 +69,61 @@ void exibirResumo()
 
 int main()
 {
-    // cabecalho();
-    inserirDados();
-    // Simulação de adição de itens
-    for (int i = 0; i < 3; ++i)
-    {
-        Item item; // Cria uma instância da estrutura Item para representar um produto
+    Item item; // Cria uma instância da estrutura Item para representar um produto
 
-        cout << "Digite o código do produto: ";
-        cin >> item.cod;
+    cout << "Digite o código do produto: ";
+    cin >> item.cod;
+
+    cout << "Digite a descrição do produto: ";
+    cin.ignore(); // Limpa o buffer de entrada para evitar problemas com getline
+    getline(cin, item.descricao);
+
+    cout << "Digite a quantidade: ";
+    cin >> item.qtde;
+
+    cout << "Digite o valor unitário: ";
+    cin >> item.vlUnit;
+    system("clear");
+
+    // Adiciona o item à lista e obtém o valor total do item
+    double vlTotalItem = adicionarItem(item);
+
+    lista(item.cod, item.descricao, item.qtde, item.vlUnit, vlTotalItem);
+    // for (int i = 0; i < 3; ++i)
+    // {
+    //     Item item; // Cria uma instância da estrutura Item para representar um produto
+
+    //     cout << "Digite o código do produto: ";
+    //     cin >> item.cod;
         
 
-        cout << "Digite a descrição do produto: ";
-        cin.ignore(); // Limpa o buffer de entrada para evitar problemas com getline
-        getline(cin, item.descricao);
+    //     cout << "Digite a descrição do produto: ";
+    //     cin.ignore(); // Limpa o buffer de entrada para evitar problemas com getline
+    //     getline(cin, item.descricao);
         
 
-        cout << "Digite a quantidade: ";
-        cin >> item.qtde;
+    //     cout << "Digite a quantidade: ";
+    //     cin >> item.qtde;
   
 
-        cout << "Digite o valor unitário: ";
-        cin >> item.vlUnit;
-        system("clear");
+    //     cout << "Digite o valor unitário: ";
+    //     cin >> item.vlUnit;
+    //     system("clear");
 
-              // Adiciona o item à lista e obtém o valor total do item
-        double vlTotalItem = adicionarItem(item);
+    //           // Adiciona o item à lista e obtém o valor total do item
+    //     double vlTotalItem = adicionarItem(item);
 
-        lista(item.cod, item.descricao, item.qtde, item.vlUnit, vlTotalItem);
+    //     lista(item.cod, item.descricao, item.qtde, item.vlUnit, vlTotalItem);
 
-        // Aguarda uma tecla antes de prosseguir para o próximo item
-        // cout << "\nPressione Enter para continuar...";
-        // cin.ignore();
-        // cin.get();
-    }
+    //     // Aguarda uma tecla antes de prosseguir para o próximo item
+    //     // cout << "\nPressione Enter para continuar...";
+    //     // cin.ignore();
+    //     // cin.get();
+    // }
 
     // Exibe o resumo final
    
-    exibirResumo();
+    // exibirResumo();
 
     return 0;
 }
