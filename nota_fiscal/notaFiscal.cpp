@@ -43,14 +43,14 @@ void lista(int cod, const string& descricao, int qtde, double vlUnit, double vlT
     cout << "CODIGO       DESCRICAO QTDE UN VL.UNIT VL.TOTAL" << endl;
 
     // Exibe o item abaixo dos rótulos
-    cout << setw(5) << cod << "        " << setw(10) << descricao << setw(4) << qtde << " UN R$ " 
+    cout << setw(5) << cod << "  " << setw(10) << descricao << setw(4) << qtde << " UN R$ " 
     << setw(6) << vlUnit << " R$ " << setw(6) << vlTotalItem << endl;
 }
 
-void inserirDados(){ // programa em analise
-    cout << "+------------------------------------+" << endl;
-    cout << "+INSERIR DADOS                       +" << endl;
-    cout << "+------------------------------------+" << endl;
+void entradaDados(){ 
+    cout << "+---------------------------------------------+" << endl;
+    cout << "+INSERIR DADOS                                +" << endl;
+    cout << "+---------------------------------------------+" << endl; 
 }
 // Implementação da função
 double adicionarItem(Item &item)
@@ -58,6 +58,7 @@ double adicionarItem(Item &item)
     double vlTotalItem = item.qtde * item.vlUnit;
     vlTotal += vlTotalItem; // Adiciona ao valor total global
     return vlTotal;     // Retorna o valor total do item
+
 }
 
 void exibirResumo()
@@ -66,9 +67,22 @@ void exibirResumo()
     cout << "VALOR TOTAL: R$ " << fixed << setprecision(2) << vlTotal << endl;
     cout << "-----------------------------------------------" << endl;
 }
+/*
+    Atividades:
+    Criar módulos para serem acoplados tais
+     - Criação uma função permitindo a entrada de dados no programa,
+     onde o usuário informa o código, descrição, quantidade e valor unit
+     - Resumo dos intens e seu  o valor toral a pagar
 
+
+*/ 
 int main()
 {
+
+    entradaDados();
+
+    
+
     Item item; // Cria uma instância da estrutura Item para representar um produto
 
     cout << "Digite o código do produto: ";
@@ -87,8 +101,11 @@ int main()
 
     // Adiciona o item à lista e obtém o valor total do item
     double vlTotalItem = adicionarItem(item);
+   
+ 
+    exibirResumo();
 
-    lista(item.cod, item.descricao, item.qtde, item.vlUnit, vlTotalItem);
+    // lista(item.cod, item.descricao, item.qtde, item.vlUnit, vlTotalItem);
     // for (int i = 0; i < 3; ++i)
     // {
     //     Item item; // Cria uma instância da estrutura Item para representar um produto
@@ -124,6 +141,7 @@ int main()
     // Exibe o resumo final
    
     // exibirResumo();
+  
 
     return 0;
 }
