@@ -20,8 +20,13 @@ double vlTotal = 0.0; // Inicializa o valor total
 double adicionarItem(Item &item);
 
 // Funções
-
-void cabecalho()
+void entradaDados()
+{
+    cout << "+---------------------------------------------+" << endl;
+    cout << "+INSERIR DADOS                                +" << endl;
+    cout << "+---------------------------------------------+" << endl;
+}
+void informacao()
 {
     cout << "" << endl;
     cout << "Imãos Silva Supermecados Ltda " << endl;
@@ -47,11 +52,7 @@ void lista(int cod, const string& descricao, int qtde, double vlUnit, double vlT
     << setw(6) << vlUnit << " R$ " << setw(6) << vlTotalItem << endl;
 }
 
-void entradaDados(){ 
-    cout << "+---------------------------------------------+" << endl;
-    cout << "+INSERIR DADOS                                +" << endl;
-    cout << "+---------------------------------------------+" << endl; 
-}
+
 // Implementação da função
 double adicionarItem(Item &item)
 {
@@ -101,8 +102,9 @@ int main()
 
     // Adiciona o item à lista e obtém o valor total do item
     double vlTotalItem = adicionarItem(item);
-   
- 
+
+    informacao();
+    lista(struct Item);
     exibirResumo();
 
     // lista(item.cod, item.descricao, item.qtde, item.vlUnit, vlTotalItem);
