@@ -19,7 +19,7 @@ int main() {
 
     delete[] auxiliar; // liberar memoria
 
-    cout << "Você digitou: " << *(auxiliar) << endl;
+    auxiliar = NULL;
 
     return 0;
 }
