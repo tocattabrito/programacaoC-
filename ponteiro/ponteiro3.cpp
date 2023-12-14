@@ -2,10 +2,9 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
 
-    
+int main() {
+
     int auxiliar[4];
 
     cout << "Digite um número: ";
@@ -20,3 +19,10 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
+
+    
+
+    
+
+
+  
