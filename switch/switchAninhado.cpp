@@ -48,5 +48,7 @@ int main(int argc, char const *argv[])
                 cout << "Digite apenas 1 ou 2!|\n";
                 break;
             }
+           
+        }
     return 0;
 }
